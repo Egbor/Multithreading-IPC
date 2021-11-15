@@ -82,7 +82,7 @@ int a_process_entry(void* arg) {
   while (!terminate_status) {
     scanf("%d", &value);
     if (write_in_pipe(arguments->pipe, &value, sizeof(int)) == -1) {
-      throw_warning("A");
+      throw_warning("The error was caused while write into the pipe");
     }
   }
   close_pipe(arguments->pipe);
